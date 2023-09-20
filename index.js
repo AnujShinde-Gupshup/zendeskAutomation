@@ -1,7 +1,6 @@
 var express = require('express');
 var api = require('./api.js')
 var app = express();
-const axios = require('axios');
 var cors = require('cors');
 var fs =require('fs');
 var path = require('path');
