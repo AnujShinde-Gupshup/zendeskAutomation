@@ -20,7 +20,6 @@ app.get('/', function (req, res) {
         } else {
             res.status(200).send(pgResp);
         }
-    //res.send("Go Home!");
     })
 });
 
