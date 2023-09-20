@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/style.css">
+  <!-- <link type="style/css" href="css/style.css" /> -->
+</head>
+
+<body>
+  <div class="containerID" id="container">
+    <!-- code here -->
+    <div class="card">
+      <div class="card-image">
+        <h2 class="card-heading name">
+          What would you like to do?<br />
+
+          <small>Select an option<option value=""></option></small>
+        </h2>
+      </div>
+      <form class="card-form" onsubmit="return false;">
+        <div class="action" id="orgbtn">
+          <button class="action-button" type="submit" onclick="createorg()">
+            Create organization
+          </button>
+          <div class="action" id="domainbtn">
+            <button class="action-button" type="submit" onclick="showGetDomain()">
+              Verify users
+            </button>
+          </div>
+          <div class="action" id="listbtn">
+            <button class="action-button" type="submit" onclick="listUsers()">
+              List Users
+            </button>
+          </div>
+          <div class="action" id="listbtn">
+            <button class="action-button" type="submit" onclick="listOrgs()">
+              List Organizations
+            </button>
+          </div>
+        </div>
+
+    </div>
+  </div>
+  <div class="container1" id="container1">
+    <!-- code here -->
+    <div class="card">
+      <div class="card-image">
+        <h2 class="card-heading">
+          Get started<br />
+
+          <small>Create the organization</small>
+        </h2>
+      </div>
+      <form class="card-form" onsubmit="return false;">
+        <div class="input">
+          <input type="text" class="input-field" value="" id="partner" required />
+          <label class="input-label">Partner name</label>
+        </div>
+        <div class="input">
+          <input type="text" class="input-field" value="" id="lang" required />
+          <label class="input-label">Language</label>
+        </div>
+        <div class="input">
+          <input type="text" class="input-field" value="" id="region" required />
+          <label class="input-label">Region</label>
+        </div>
+        <div class="input">
+          <input type="text" class="input-field" value="" id="isvnumber" />
+          <label class="input-label">ISV Registration Batch Number</label>
+        </div>
+        <div class="input">
+          <input type="text" class="input-field" value="" id="domainorg" />
+          <label class="input-label">Domain</label>
+        </div>
+        <div class="input">
+          <input type="text" class="input-field" value="" id="details" />
+          <label class="input-label">Details</label>
+        </div>
+        <div class="input">
+          <input type="text" class="input-field" value="" id="notes" />
+          <label class="input-label">Notes</label>
+        </div>
+        <div class="input">
+          <input type="text" class="input-field" value="" id="partnerid" />
+          <label class="input-label">Partner Id</label>
+        </div>
+        <div class="input">
+          <input type="text" class="input-field" value="" id="partnetvertical" />
+          <label class="input-label">Partner Vertical</label>
+        </div>
+        <div class="input">
+          <select name="groups" id="groups" class="input-field"></select>
+          <label for="groups" class="input-label">Groups:</label>
+        </div>
+        <div class="input">
+          <select name="csm" id="csm" class="input-field"></select>
+          <label for="csm" class="input-label">CSM:</label>
+        </div>
+        <div class="action">
+          <button class="action-button" type="submit" onclick="createOrg()">
+            Create org
+          </button>
+
+        </div>
+        <div class="action" id="findUserbtn">
+          <button class="action-button" type="submit" onclick="menu()">
+            Back to Menu
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="container2" id="container2">
+    <!-- code here -->
+    <div class="card3">
+      <div class="card-image">
+        <h2 class="card-heading">
+          Next Step<br />
+
+          <small>Verify User</small>
+        </h2>
+      </div>
+      <form class="card-form" onsubmit="return false;">
+        <div class="input">
+          <input type="text" id="domain" class="input-field" required />
+          <label class="input-label">Domain</label>
+        </div>
+        <div class="action" id="findUserbtn1">
+          <button class="action-button" type="submit" onclick="findUser()">
+            Find Users
+          </button>
+        </div>
+        <div class="action" id="findUserbtn2">
+          <button class="action-button" type="submit" onclick="menu()">
+            Back to Menu
+          </button>
+        </div>
+
+      </form>
+      <form class="card-form" onsubmit="return false;" id="emails">
+        <!-- <div class="input">
+          <select name="emails" id="users" class="input-field" multiple></select>
+          <label for="emails" class="input-label">Choose user to Verify:</label>
+        </div> -->
+         <table>
+          <tr>
+            <th class="id">ID</th>
+            <th class="email">Email</th>
+            <th class="email">Verified</th>
+          </tr>
+        </table>
+        <table id="paginated-list2" class="table" data-current-page="1" aria-live="polite">
+          
+        </table>
+  
+        <nav class="pagination-container">
+          <button class="pagination-button" id="prev-button2" aria-label="Previous page" title="Previous page">
+            &lt;
+          </button>
+  
+          <div id="pagination-numbers2">
+  
+          </div>
+  
+          <button class="pagination-button" id="next-button2" aria-label="Next page" title="Next page">
+            &gt;
+          </button>
+        </nav><br><br>
+        <div class="action">
+          <button class="action-button" type="submit" onclick="verifyUser2()">
+            Verify Users
+          </button>
+        </div>
+        <div class="action" id="findUserbtn">
+          <button class="action-button" type="submit" onclick="menu()">
+            Back to Menu
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="container3" id="container3">
+    <div class="card">
+      <div class="card-image">
+        <h2 class="card-heading">
+          Congratulations<br />
+
+          <small>You have verified all users</small>
+        </h2>
+      </div>
+      <p id="success">Emails verified:<br /></p>
+      <div class="action" id="findUserbtn">
+        <button class="action-button" type="submit" onclick="menu()">
+          Back to Menu
+        </button>
+      </div>
+    </div>
+
+  </div>
+  <div class="container4" id="container4">
+    <div class="card2">
+      <!-- <div class="card-image">
+        <h2 class="card-heading">
+          List User<br />
+
+          <small>Here are all unverified users:</small>
+        </h2>
+      </div> -->
+      <h2 class="title">List User</h2>
+      <br>
+      <table>
+        <tr>
+          <th class="id">ID</th>
+          <th class="email">Email</th>
+          <th class="verified">Verfied</th>
+        </tr>
+      </table>
+      <table id="paginated-list" data-current-page="1" aria-live="polite">
+        
+      </table>
+
+      <nav class="pagination-container">
+        <button class="pagination-button" id="prev-button" aria-label="Previous page" title="Previous page">
+          &lt;
+        </button>
+
+        <div id="pagination-numbers">
+
+        </div>
+
+        <button class="pagination-button" id="next-button" aria-label="Next page" title="Next page">
+          &gt;
+        </button>
+      </nav><br><br>
+      <div class="action">
+        <button class="action-button" type="submit" onclick="verifyUser2()">
+          Verify Users
+        </button>
+      </div>
+      <div class="action">
+        <button class="action-button" type="submit" onclick="menu()">
+          Back to Menu
+        </button>
+      </div>
+    </div>
+
+  </div>
+  
+  <div class="container4" id="container5">
+    <div class="card2">
+      <!-- <div class="card-image">
+        <h2 class="card-heading">
+          List User<br />
+
+          <small>Here are all unverified users:</small>
+        </h2>
+      </div> -->
+      <h2 class="title">List Organizations</h2>
+      <br>
+      <table>
+        <tr>
+          <th class="id">ID</th>
+          <th class="email">Name</th>
+          <th class="verified">Region</th>
+        </tr>
+      </table>
+      <table id="paginated-list3" data-current-page="1" aria-live="polite">
+        
+      </table>
+
+      <nav class="pagination-container">
+        <button class="pagination-button" id="prev-button3" aria-label="Previous page" title="Previous page">
+          &lt;
+        </button>
+
+        <div id="pagination-numbers3">
+
+        </div>
+
+        <button class="pagination-button" id="next-button3" aria-label="Next page" title="Next page">
+          &gt;
+        </button>
+      </nav><br><br>
+      <div class="action">
+        <button class="action-button" type="submit" onclick="getOrgDetails()">
+          Update
+        </button>
+      </div>
+      <div class="action">
+        <button class="action-button" type="submit" onclick="menu()">
+          Back to Menu
+        </button>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="container1" id="container6">
+    <!-- code here -->
+    <div class="card">
+      <div class="card-image">
+        <h2 class="card-heading">
+          Update the organization<br />
+
+          <small>*</small>
+        </h2>
+      </div>
+      <form class="card-form" onsubmit="return false;">
+        <div class="input">
+          <input type="text" class="input-field" id="partneru" required />
+          <label class="input-label">Partner name</label>
+        </div>
+        <div class="input">
+          <input type="text" class="input-field" id="langu" required />
+          <label class="input-label">Language</label>
+        </div>
+        <div class="input">
+          <input type="text" class="input-field" id="regionu" required />
+          <label class="input-label">Region</label>
+        </div>
+        <div class="input">
+          <input type="text" class="input-field" id="isvnumberu" />
+          <label class="input-label">ISV Registration Batch Number</label>
+        </div>
+        <div class="input">
+          <input type="text" class="input-field" id="domainorgu" />
+          <label class="input-label">Domain</label>
+        </div>
+        <div class="input">
+          <input type="text" class="input-field" value="" id="detailsu" />
+          <label class="input-label">Details</label>
+        </div>
+        <div class="input">
+          <input type="text" class="input-field"  id="notesu" />
+          <label class="input-label">Notes</label>
+        </div>
+        <div class="input">
+          <input type="text" class="input-field"  id="partneridu" />
+          <label class="input-label">Partner Id</label>
+        </div>
+        <div class="input">
+          <input type="text" class="input-field" id="partnetverticalu" />
+          <label class="input-label">Partner Vertical</label>
+        </div>
+        <div class="input">
+          <select name="groups" id="groupsu" class="input-field"></select>
+          <label for="groups" class="input-label">Groups:</label>
+        </div>
+        <div class="input">
+          <select name="csm" id="csmu" class="input-field"></select>
+          <label for="csm" class="input-label">CSM:</label>
+        </div>
+        <div class="action">
+          <button class="action-button" type="submit" onclick="updateOrg()">
+            Update
+          </button>
+
+        </div>
+        <div class="action" id="findUserbtn">
+          <button class="action-button" type="submit" onclick="menu()">
+            Back to Menu
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+<script src="app.js"></script>
+</body>
+
+</html>
