@@ -1,3 +1,5 @@
 git add .
-git commit -m {{$msg}}
+echo "Enter Your Commit comment"
+read msg 
+git commit -m $msg
 git push origin master
